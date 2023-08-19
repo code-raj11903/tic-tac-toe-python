@@ -1,7 +1,9 @@
 import numpy as np
+import os
 Ele = [i  for i in range(0, 9)]
 arr = np.array(Ele, dtype=str).reshape((3, 3))
-
+def clear_terminal():
+  os.system("cls")
 def disp():
 
   print("| {} | {} | {} |".format(arr[0][0],arr[0][1],arr[0][2]))
@@ -59,6 +61,7 @@ while i<9:
     player =2
   index = u_input(player)  # Get the user input for the current player
   if move(index, player):
+    clear_terminal()
     disp()
     i+=1
     if game_status():
